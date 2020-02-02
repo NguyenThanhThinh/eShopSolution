@@ -1,0 +1,2 @@
+# eShopSolution
+net core
