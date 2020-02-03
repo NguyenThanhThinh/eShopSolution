@@ -13,10 +13,13 @@
   <ItemGroup>
     <Compile Include="Migrations\20200202062106_init.cs" />
     <Compile Include="Migrations\20200202062106_init.designer.cs" />
+    <Compile Include="Migrations\20200203160702_addIndentityDatabase.cs" />
+    <Compile Include="Migrations\20200203160702_addIndentityDatabase.designer.cs" />
     <Compile Include="Migrations\EShopDbContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
