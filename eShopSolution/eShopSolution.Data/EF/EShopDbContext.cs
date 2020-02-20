@@ -46,10 +46,10 @@ namespace eShopSolution.Data.EF
             modelBuilder.Seed();
         }
 
-        public DbSet<Product> Products { get; set; }
+      
         public DbSet<Category> Categories { get; set; }
-
-        public DbSet<AppConfig> AppConfigs { get; set; }
+		public DbSet<Product> Products { get; set; }
+		public DbSet<AppConfig> AppConfigs { get; set; }
 
 
         public DbSet<Cart> Carts { get; set; }
