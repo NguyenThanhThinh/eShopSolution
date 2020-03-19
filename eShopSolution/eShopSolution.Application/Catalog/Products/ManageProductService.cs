@@ -140,14 +140,26 @@ namespace eShopSolution.Application.Catalog.Products
 			return await _context.SaveChangesAsync();
 		}
 
-		public Task<bool> UpdatePrice(int productId, decimal newPrice)
+		public async Task<bool> UpdatePrice(int productId, decimal newPrice)
 		{
-			throw new NotImplementedException();
+			var product = await _context.Products.FindAsync(productId);
+
+			if (product == null) throw new EShopException($"Cannot find a product with id: {productId}");
+
+			product.Price = newPrice;
+
+			return await _context.SaveChangesAsync() > 0;
 		}
 
-		public Task<bool> UpdateStock(int productId, int addedQuantity)
+		public async Task<bool> UpdateStock(int productId, int addedQuantity)
 		{
-			throw new NotImplementedException();
+			var product = await _context.Products.FindAsync(productId);
+
+			if (product == null) throw new EShopException($"Cannot find a product with id: {productId}");
+
+			product.Stock += addedQuantity;
+
+			return await _context.SaveChangesAsync() > 0;
 		}
 	}
 }
